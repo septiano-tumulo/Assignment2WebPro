@@ -36,19 +36,20 @@ function Todos() {
   // console.log(todos);
 
   return(
-    <div>
-      <h1>Simple TodoApp</h1>
+    <div className="my-4 py-4 bg-dark bg-gradient text-center shadow-lg rounded-3">
+      <div className="mx-auto pt-2 pb-5 w-50 border border-light rounded-3">
+      <h1 className="text-white fw-bold">Simple TodoApp</h1>
 
       <form onSubmit={handleSubmit}>
-        <input type="text" value={text} onChange={(event) => setText(event.target.value)} />
-        <button type="Submit">Add Todo</button>
+        <input className="me-1" type="text" value={text} onChange={(event) => setText(event.target.value)} />
+        <button className="btn-light btn-sm btn-outline-secondary" type="Submit">Add Todo</button>
       </form>
-
       {
         todos.map((todo) => {
           return <TodoItem key={todo.id} todo={todo} dispatch={dispatch} />
         })
       }
+      </div>
     </div>
   );
 }
